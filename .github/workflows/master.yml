@@ -12,5 +12,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.samkirkland.com
-          username: myFtpUserName
+          username: ${{ secrets.username }}
           password: ${{ secrets.ftp_password }}
+          server-dir: /public_html/161.35.147.84:3000/
