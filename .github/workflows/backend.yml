@@ -27,9 +27,9 @@ jobs:
           username: ${{ secrets.DROPLET_USERNAME }}
           password: ${{ secrets.DROPLET_PASSWORD }}
           script: |
-            cd /path/to/backend
+            cd /tourism-platform-concept/backend
             rm -rf *
-            scp -r /path/to/local/backend/* .
+            scp -r /tourism-platform-concept/backend/* .
       - name: Restart Backend Server
         uses: appleboy/ssh-action@master
         with:

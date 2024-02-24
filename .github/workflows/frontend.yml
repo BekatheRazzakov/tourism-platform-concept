@@ -24,9 +24,9 @@ jobs:
           username: ${{ secrets.DROPLET_USERNAME }}
           password: ${{ secrets.DROPLET_PASSWORD }}
           script: |
-            cd /path/to/frontend
+            cd /tourism-platform-concept/frontend
             rm -rf *
-            scp -r /path/to/local/frontend/build/* .
+            scp -r /tourism-platform-concept/frontend/build/* .
       - name: Restart Frontend Server or Configure Nginx
         uses: appleboy/ssh-action@master
         with:
