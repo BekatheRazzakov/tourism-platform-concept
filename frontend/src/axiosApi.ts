@@ -15,7 +15,7 @@ export const addInterceptors = (store: Store<RootState>) => {
 };
 
 const axiosApi = axios.create({
-  baseURL: 'http://161.35.147.84:8000',
+  baseURL: apiUrl,
 });
 
 export default axiosApi;

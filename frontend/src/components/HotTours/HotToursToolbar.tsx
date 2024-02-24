@@ -14,10 +14,8 @@ const HotToursToolbar = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (!tours.length) {
-      dispatch(fetchToursWithDiscountPrice());
-    }
-  }, [dispatch, tours]);
+    dispatch(fetchToursWithDiscountPrice());
+  }, [dispatch]);
 
   const goToSlide = (index: number, e: React.MouseEvent) => {
     e.stopPropagation();

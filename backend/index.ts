@@ -24,7 +24,6 @@ import statisticsInfoRouter from './routers/statisticsInfo';
 import cookieParser from 'cookie-parser';
 
 const app = express();
-const port = 8000;
 
 app.use(cors());
 app.use(express.json());
@@ -56,7 +55,9 @@ const run = async () => {
   mongoose.set('strictQuery', false);
   await mongoose.connect(config.db);
 
-  app.listen(config.port, () => console.log(`Server started on ${config.port} port...`));
+  app.listen(config.port, () =>
+    console.log(`Server started on ${config.port} port...`),
+  );
 
   process.on('exit', () => {
     mongoose.disconnect();
