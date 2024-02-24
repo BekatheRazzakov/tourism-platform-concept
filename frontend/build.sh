@@ -1,9 +1,6 @@
 #!/bin/bash
-CURRENT_DIR=$(pwd)
-echo CURRENT_DIR
-echo "HELLO"
 # Change directory to the frontend directory
-cd /Users/brzzkvgmail.com/Downloads/ESDP/tourism-platform-concept/frontend
+cd /frontend
 
 # Install dependencies
 npm install
