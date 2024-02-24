@@ -1,0 +1,41 @@
+name: Frontend Deployment
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Frontend
+        run: npm run build
+      - name: Transfer Built Files to Droplet
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USERNAME }}
+          password: ${{ secrets.DROPLET_PASSWORD }}
+          script: |
+            cd /path/to/frontend
+            rm -rf *
+            scp -r /path/to/local/frontend/build/* .
+      - name: Restart Frontend Server or Configure Nginx
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USERNAME }}
+          password: ${{ secrets.DROPLET_PASSWORD }}
+          script: |
+            # If you're serving frontend directly
+            sudo systemctl restart nginx
+          
+            # If you're using Nginx as reverse proxy
+            # Configure Nginx to serve the frontend
