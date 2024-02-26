@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:test": "NEXT_PUBLIC_API_URL=http://161.35.147.84:8010 PORT=3010 next dev",
+    "dev:test": "NEXT_PUBLIC_API_URL=http://localhost:8010 PORT=3010 next dev",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
