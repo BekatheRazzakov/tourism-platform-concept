@@ -1,4 +1,4 @@
-export const apiUrl = 'http://161.35.147.84:8000';
+export const apiUrl = 'http://161.35.147.84:8010';
 
 export enum userRoles {
   admin = 'admin',
