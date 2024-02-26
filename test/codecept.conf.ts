@@ -20,7 +20,7 @@ export const config: CodeceptJS.MainConfig = {
     I: "./steps_file",
   },
   gherkin: {
-    features: "./features/*feature",
+    features: "./features/m",
     steps: [
       "./step_definitions/mainSliderSteps.ts",
       // "./step_definitions/registrationSteps.ts",
