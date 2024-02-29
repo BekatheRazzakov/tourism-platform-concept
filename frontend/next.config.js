@@ -5,6 +5,8 @@ module.exports = {
     locales: ['en', 'ru', 'kg'],
     defaultLocale: 'en',
   },
+  basePath: '/tourism-platform-concept',
+  output: 'export',
   reactStrictMode: true,
   images: { remotePatterns: [{ hostname: 'localhost' }] },
   webpack: (config, { _ }) => {
